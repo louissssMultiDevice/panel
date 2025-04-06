@@ -2,149 +2,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ditss Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Fika Store - Beranda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f0f4ff;
-      color: #1e3a8a;
+      background-color: #f9fafb;
+      color: #111827;
     }
-    header, footer {
-      background-color: #1e40af;
+    header {
+      background: linear-gradient(to right, #6366f1, #4f46e5);
       color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
     }
     nav {
-      background-color: #1d4ed8;
+      background-color: #4338ca;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      gap: 25px;
+      padding: 15px;
     }
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: color 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+      color: #c7d2fe;
     }
     .hero {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 60px 20px;
+      background: #eef2ff;
     }
     .hero img {
       max-width: 100%;
+      height: auto;
       border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
     }
     .hero h2 {
       font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #4b5563;
     }
     .section {
+      padding: 60px 20px;
       text-align: center;
-      margin-bottom: 40px;
     }
     .section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .contact {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 600px;
+    .section p {
+      max-width: 700px;
       margin: auto;
+      font-size: 1.1rem;
+      color: #374151;
     }
-    .contact h2 {
-      margin-bottom: 20px;
-    }
-    .contact p {
-      margin-bottom: 10px;
-    }
-    .contact a {
-      color: #1d4ed8;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .about img {
-      max-width: 100%;
-      border-radius: 15px;
-      margin-bottom: 20px;
+    footer {
+      background-color: #3730a3;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>  <header>
-    <h1>Ditss Store</h1>
-    <p>Layanan Digital Terlengkap, Murah & Terpercaya</p>
+    <h1>Fika Store</h1>
+    <p>Layanan digital cepat, aman, dan terpercaya</p>
   </header>  <nav>
     <a href="index.html">Beranda</a>
     <a href="produk.html">Produk</a>
     <a href="tentang.html">Tentang</a>
     <a href="kontak.html">Kontak</a>
-  </nav>  <div class="container"><div class="hero">
-  <img src="https://images.unsplash.com/photo-1611175694984-b7b3cb56f64c" alt="Ditss Store Hero">
-  <h2>Solusi Digital Terbaik untuk Kebutuhanmu</h2>
-</div>
-
-<div class="section">
-  <h3>Apa yang Kami Tawarkan?</h3>
-  <p>Kami menyediakan pulsa mulai 7rb, VPS hosting, jasa edit & perbaikan script bot, panel Pterodactyl, hingga nomor kosong (nokos) untuk kebutuhan verifikasi.</p>
-</div>
-
-<div class="products">
-  <!-- Card produk bisa ditambahkan di sini -->
-</div>
-
-<div class="about section">
-  <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd" alt="Tentang Kami">
-  <h2>Tentang Ditss Store</h2>
-  <p>Ditss Store adalah platform digital yang menyediakan layanan pulsa murah, VPS, jasa bot, hingga nomor kosong. Kami berkomitmen memberikan solusi digital terpercaya dengan harga terbaik.</p>
-</div>
-
-<div class="contact section">
-  <h2>Kontak Kami</h2>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281513607731" target="_blank">+62 815-1360-7731</a></p>
-  <p><strong>Email:</strong> <a href="mailto:cs@ditssstore.id">cs@ditssstore.id</a></p>
-  <p><strong>Instagram:</strong> <a href="https://www.instagram.com/dits.v2?igsh=NmE3Mmt0MWRmc2Uz" target="_blank">@ditss.store</a></p>
-  <p><strong>Jam Operasional:</strong> Setiap Hari, 08.00 - 22.00 WIB</p>
-</div>
-
+  </nav>  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1611175694984-b7b3cb56f64c" alt="Fika Store Hero">
+    <h2>Solusi Digital Modern & Profesional</h2>
+    <p>Kami menyediakan berbagai layanan digital mulai dari pulsa hingga hosting berkualitas.</p>
+  </div>  <div class="section">
+    <h3>Kenapa Memilih Kami?</h3>
+    <p>Fika Store hadir untuk memenuhi semua kebutuhan digitalmu dengan layanan cepat, harga bersahabat, dan support ramah setiap saat.</p>
   </div>  <footer>
-    &copy; 2025 Ditss Store - All rights reserved.
+    &copy; 2025 Fika Store - All rights reserved.
   </footer></body>
 </html>
