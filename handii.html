@@ -1,296 +1,103 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="thumb.jpg" type="image/png" href="thumb.jpg">
-  <title>Fika Store - Handi</title>
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <title>Handi | Fika AI</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
     body {
-      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
     }
-    button {
-  font-family: inherit;
-  font-size: 20px;
-  background: royalblue;
-  color: white;
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
-  display: flex;
-  align-items: center;
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.2s;
-}
-
-button span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-button svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-button:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-button:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-button:hover span {
-  transform: translateX(5em);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
-  }
-  to {
-    transform: translateY(-0.1em);
-  }
-    nav {
+    .container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 3rem;
-      background-color: rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 50px;
+      flex-wrap: wrap;
     }
-    
-    .logo2 {
-      color: #00ffd1;
-      font-size: 22px;
-      font-weight: bold;
+    .left {
+      max-width: 50%;
     }
-    
-    nav .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00ffc3;
-    }
-
-    nav .menu a1 {
-      margin: 0 1rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav .menu a1:hover {
-      color: #00ffc3;
-    }
-
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .menu a:hover {
-      color: #00ffd1;
-    }
-    
-    .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
-  padding: 40px;
-}
-
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.image {
-  flex: 1;
-  text-align: center;
-}
-
-.image img {
-  max-width: 300px;
-  border-radius: 100%;
-  box-shadow: 0 0 20px #00ffcc;
-}
-    
-    .hero h1 {
+    .left h1 {
       font-size: 36px;
-      margin-bottom: 10px;
+      margin: 0;
     }
-
-    .hero h2 {
+    .left h2 {
       font-size: 28px;
-      line-height: 1.5;
+      margin: 10px 0;
+      color: #00ffe1;
     }
-
-    .hero h2 span {
-      color: #00ffc3;
+    .left p {
+      margin: 20px 0;
+      font-size: 16px;
+      color: #ddd;
     }
-
-    .hero .socials i {
-      font-size: 24px;
-      margin: 10px 10px 0 0;
-      color: white;
+    .animated-text {
+      display: inline-block;
+      font-weight: bold;
+      color: #00ffe1;
+    }
+    .right img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ffe1;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #00ffe1;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
       transition: 0.3s;
     }
-
-    .hero .socials i:hover {
-      color: #00ffc3;
+    .btn:hover {
+      background: #00ccc1;
     }
-
-    .hero .btn {
-      background: #00ffc3;
-      color: #000;
-      padding: 10px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 20px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .hero img {
-      width: 220px;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #00ffc3;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: rgba(0,0,0,0.3);
-      font-size: 14px;
-      color: #aaa;
-    }
-
     @media (max-width: 768px) {
-      .hero {
+      .container {
         flex-direction: column;
         text-align: center;
-        padding: 2rem;
       }
-      .hero img {
-        margin-top: 2rem;
+      .left, .right {
+        max-width: 100%;
       }
-      .cursor {
-  display: inline-block;
-  width: 3px;
-  background-color: #00f7ff;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
     }
   </style>
 </head>
-<body>  <nav>
-    <div class="logo2">Fika | Handi Dev</div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="service.html">Service</a>
-      <a href="contact.html">contact</a>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Hai, It's Handi</h1>
+      <h2>I'm a <span class="animated-text" id="text"></span></h2>
+      <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
+      <a href="index.html"><button class="btn">Kembali ke Beranda</button></a>
     </div>
-  </nav> 
-  <div class="image">
-    <img src="thumb.jpg" alt="Fika Ai"/>
+    <div class="right">
+      <img src="fika-logo.png" alt="Logo Fika" />
+    </div>
   </div>
-  <section class="hero">
-  <div class="hero-left">
-    <h1>Hai, It's <span class="highlight">Handi</span></h1>
-    <h2>I'm a <span class="highlight"><span class="typed-text"></span><span class="cursor">&nbsp;</span></span></h2>
-    <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
-    <div class="socials">
-      <i class="bx bxl-whatsapp"></i>
-      <i class="bx bxl-instagram"></i>
-      <i class="bx bxl-linkedin"></i>
-    </div>
-    <div>
-  <button class="btn" onclick="window.location.href='menu.html'">
-    <i class="animation"></i>Belanja<i class="animation"></i>
-  </button>
-    </div>
-    <div>
-  <button class="btn" onclick="window.location.href='kontak.html'">
-    <i class="animation"></i>Contact<i class="animation"></i>
-  </button>
-    </div>
-  </section>  <footer>
-    &copy; 2025 Fika Store. Dibuat oleh Handi dengan penuh perjuangan.
-  </footer>
-<script>
-  const words = ["Dev", "Fullstack Dev", "Designer", "Programmer", "Hacker😈😈"];
-  const typedText = document.querySelector(".typed-text");
-  const cursor = document.querySelector(".cursor");
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  <script>
+    const textList = ["Fullstack Dev", "Designer", "Programmer", "Dev"];
+    let index = 0;
+    const textEl = document.getElementById("text");
 
-  function typeEffect() {
-    const currentWord = words[wordIndex];
-    const currentText = currentWord.substring(0, charIndex);
-
-    typedText.textContent = currentText;
-
-    if (!isDeleting) {
-      if (charIndex < currentWord.length) {
-        charIndex++;
-        setTimeout(typeEffect, 100);
-      } else {
-        isDeleting = true;
-        setTimeout(typeEffect, 1500); // Tunggu sebelum menghapus
-      }
-    } else {
-      if (charIndex > 0) {
-        charIndex--;
-        setTimeout(typeEffect, 60);
-      } else {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeEffect, 500);
-      }
+    function changeText() {
+      textEl.textContent = textList[index];
+      index = (index + 1) % textList.length;
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", typeEffect);
-</script>
+    changeText(); // tampil pertama
+    setInterval(changeText, 2000); // ganti tiap 2 detik
+  </script>
 </body>
 </html>
