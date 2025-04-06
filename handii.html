@@ -67,18 +67,49 @@
     }
     
     .hero {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      height: 100vh;
-      padding: 0 10%;
-    }
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 40px;
+}
 
-    .hero-text {
-      max-width: 600px;
-    }
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
+.text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image {
+  flex: 1;
+  text-align: center;
+}
+
+.image img {
+  max-width: 300px;
+  border-radius: 100%;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00ffcc;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+    
     .hero h1 {
       font-size: 36px;
       margin-bottom: 10px;
@@ -150,16 +181,25 @@
       <a href="kontak.html">Kontak</a>
       <a href="jasa.html">jasa</a>
     </div>
-  </nav>  <section class="hero" id="home">
-    <h1>Hello, It's Me</h1>
-    <h2><span>Handi</span><br>And I'm the developer of this website</h2>
-    <div class="socials">
-      <a href="#"><i class='bx bxl-whatsapp'></i></a>
-      <a href="#"><i class='bx bxl-instagram'></i></a>
-      <a href="#"><i class='bx bxl-linkedin'></i></a>
-    </div>
-    <a href="https://drive.google.com/your-cv-link" class="btn">Download CV</a>
+  </nav> 
+  <div class="image">
     <img src="thumb.jpg" alt="Fika Ai"/>
+  </div>
+  <section class="hero">
+  <div class="hero-content">
+    <div class="text">
+      <h1>Hello, It's Me</h1>
+      <h2>Handi</h2>
+      <p>And I'm the developer of this website</p>
+      <div class="social-icons">
+        <i class="bx bxl-whatsapp"></i>
+        <i class="bx bxl-instagram"></i>
+        <i class="bx bxl-linkedin"></i>
+      </div>
+      <a href="#" class="btn">Download CV</a>
+    </div>
+  </div>
+  </section>
   </section>  <footer>
     &copy; 2025 Fika Store. Dibuat oleh Handi dengan penuh perjuangan.
   </footer></body>
