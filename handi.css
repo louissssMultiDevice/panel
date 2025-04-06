@@ -80,3 +80,16 @@ body {
 .btn:hover {
   background: #00c9a9;
 }
+header {
+  background-color: #1e40af;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  background-color: #1d4ed8;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
