@@ -53,6 +53,7 @@ sendBtn.onclick = async () => {
 
   // Kirim ke API bot kamu di sini
   try {
+    const message = "Halo, FikaBot";
     const res = await fetch('https://fikabot.foresh.tech/chat', {
   method: 'POST',
   headers: {
