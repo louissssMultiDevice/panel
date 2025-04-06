@@ -1,153 +1,140 @@
-<!DOCTYPE html><html lang="id"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="thumb.jpg">
-  <title>Fika Store | Beranda</title>
-  <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" alt="fika logo" 
+  <title>Fika Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f0f0f;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #0e0e10;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000;
+      padding: 10px 0;
+      box-shadow: 0 0 10px rgba(0, 255, 209, 0.2);
+    }
+
+    nav {
+      max-width: 960px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      color: #00ffd1;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu a {
       color: #fff;
-    }header {
-  background-color: #111;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 10px #00f2ff80;
-}
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      position: relative;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #00f2ff;
-}
+    .menu a:hover {
+      color: #00ffd1;
+    }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
 
-nav a:hover {
-  color: #00f2ff;
-}
+    h1 {
+      font-size: 28px;
+      color: #00ffd1;
+      margin-bottom: 10px;
+    }
 
-main {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
 
-.hero {
-  text-align: center;
-  max-width: 800px;
-  animation: fadeIn 1s ease-out;
-}
+    .card {
+      background: #1a1a1d;
+      border: 1px solid #00ffd1;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(0, 255, 209, 0.2);
+      max-width: 500px;
+    }
 
-.hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #777;
+      font-size: 14px;
+    }
 
-.hero p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #ccc;
-}
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      .menu {
+        margin-top: 10px;
+      }
 
-.notification {
-  display: flex;
-  flex-direction: column;
-  isolation: isolate;
-  position: relative;
-  width: 18rem;
-  height: 8rem;
-  background: #29292c;
-  border-radius: 1rem;
-  overflow: hidden;
-  margin-top: 40px;
-  box-shadow: 0 0 20px #00f2ff70;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.notiglow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #00f2ff40 0%, transparent 70%);
-  z-index: 0;
-}
-
-.notiborderglow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #00f2ff50;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-.notititle, .notibody {
-  position: relative;
-  z-index: 2;
-  padding: 10px 20px;
-}
-
-.notititle {
-  font-size: 18px;
-  font-weight: bold;
-  color: #00f2ff;
-}
-
-.notibody {
-  font-size: 14px;
-  color: #ccc;
-}
-
+      .menu a {
+        display: inline-block;
+        margin: 6px;
+      }
+    }
   </style>
-</head><body>
-  <header>
-    <h1>Fika Store</h1>
-    <nav>
-      <a href="menu.html">🛒 Order</a>
-      <a href="produk.html">🛍️ Produk</a>
-      <a href="tentang.html">🌐 Tentang</a>
-      <a href="kontak.html">📞 Kontak</a>
-      <a href="jasa.html">🛠️ Jasa</a>
-    </nav>
-  </header>  <main>
-    <section class="hero">
-      <h2>Selamat Datang di Fika Store</h2>
-      <p>Kami menyediakan layanan pulsa murah, hosting panel, jasa digital, edit script bot, dan berbagai kebutuhan digital lainnya.</p>
-    </section><div class="notification">
-  <div class="notiglow"></div>
-  <div class="notiborderglow"></div>
-  <div class="notititle">Welcome To Fika Store</div>
-  <div class="notibody">Terima kasih telah mengunjungi website kami!</div>
-</div>
-    <section class="hero">
-      <p>Kalian bisa mengunjungi website ini kapanpun, dan jika berminat membeli sesuatu kalian bisa mengunjungi dan melihat lihat produk kami, ada beberapa menu di pojok kanan atas yang bisa kalian klik. Terimakasih.</p>
-    </section>
+</head>
+<body>
 
-  </main>
-</body></html>
+  <header>
+    <nav>
+      <div class="logo">Fika Store</div>
+      <div class="menu">
+        <a href="#">Order</a>
+        <a href="#">Produk</a>
+        <a href="#">Tentang</a>
+        <a href="#">Kontak</a>
+        <a href="#">Jasa</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Selamat Datang di Fika Store</h1>
+    <p>Kami menyediakan layanan pulsa murah, hosting panel, jasa digital, edit script bot, dan berbagai kebutuhan digital lainnya.</p>
+
+    <div class="card">
+      <h2>Welcome To Fika Store</h2>
+      <p>Terima kasih telah mengunjungi website kami!</p>
+    </div>
+
+    <p>Kalian bisa mengunjungi website ini kapanpun, dan jika berminat membeli sesuatu kalian bisa mengunjungi dan melihat-lihat produk kami. Ada beberapa menu di pojok kanan atas yang bisa kalian klik. Terima kasih.</p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Fika Store. All rights reserved.
+  </div>
+
+</body>
+</html>
