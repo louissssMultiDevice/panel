@@ -53,7 +53,7 @@ sendBtn.onclick = async () => {
 
   // Kirim ke API bot kamu di sini
   try {
-    const res = await fetch('https://some-random-api.ml/chatbot?message=halo&name=FikaBot', {
+    const res = await fetch('https://huggingface.co/api-inference', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message })
