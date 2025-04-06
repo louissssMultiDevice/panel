@@ -37,11 +37,22 @@
       font-size: 16px;
       color: #ddd;
     }
-    .animated-text {
-      display: inline-block;
+    .typing-text {
+      display: inline;
       font-weight: bold;
       color: #00ffe1;
+      border-right: 2px solid #00ffe1;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.7s step-end infinite;
     }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
     .right img {
       width: 300px;
       max-width: 100%;
@@ -70,6 +81,27 @@
       .left, .right {
         max-width: 100%;
       }
+      
+    header {
+      background: #000;
+      padding: 10px 0;
+      box-shadow: 0 0 10px rgba(0, 255, 209, 0.2);
+    }
+
+    nav {
+      max-width: 960px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      color: #00ffd1;
+      font-size: 22px;
+      font-weight: bold;
+    }
     }
   </style>
 </head>
@@ -77,7 +109,7 @@
   <div class="container">
     <div class="left">
       <h1>Hai, It's Handi</h1>
-      <h2>I'm a <span class="animated-text" id="text"></span></h2>
+      <h2>I'm a <span class="typing-text" id="typed"></span></h2>
       <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
       <a href="index.html"><button class="btn">Kembali ke Beranda</button></a>
     </div>
@@ -88,16 +120,36 @@
 
   <script>
     const textList = ["Fullstack Dev", "Designer", "Programmer", "Dev"];
-    let index = 0;
-    const textEl = document.getElementById("text");
+    const typed = document.getElementById("typed");
+    let listIndex = 0;
+    let charIndex = 0;
+    let typing = true;
 
-    function changeText() {
-      textEl.textContent = textList[index];
-      index = (index + 1) % textList.length;
+    function typeEffect() {
+      const currentText = textList[listIndex];
+      if (typing) {
+        if (charIndex < currentText.length) {
+          typed.textContent += currentText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          typed.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          listIndex = (listIndex + 1) % textList.length;
+          setTimeout(typeEffect, 500);
+        }
+      }
     }
 
-    changeText(); // tampil pertama
-    setInterval(changeText, 2000); // ganti tiap 2 detik
+    typeEffect();
   </script>
 </body>
 </html>
