@@ -1,108 +1,148 @@
-<!DOCTYPE html><html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beranda - Fika Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fika Store | Beranda</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .terminal-loader {
-      width: 300px;
-      margin: 40px auto;
-      border: 2px solid #1e40af;
-      border-radius: 8px;
-      font-family: 'Courier New', Courier, monospace;
-      background-color: #1e293b;
-      color: #38bdf8;
-      overflow: hidden;
-      animation: fadeIn 1s ease-in-out;
-    }.terminal-header {
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }header {
+  background-color: #111;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
-  background-color: #334155;
-  padding: 10px;
+  align-items: center;
+  box-shadow: 0 0 10px #00f2ff80;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #00f2ff;
+}
+
+nav a {
   color: #fff;
-}
-
-.terminal-title {
+  text-decoration: none;
+  margin-left: 20px;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
-.terminal-controls {
+nav a:hover {
+  color: #00f2ff;
+}
+
+main {
+  padding: 40px;
   display: flex;
-  gap: 5px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.control {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.hero {
+  text-align: center;
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
 }
 
-.close { background-color: #f87171; }
-.minimize { background-color: #facc15; }
-.maximize { background-color: #4ade80; }
-
-.text {
-  padding: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #38bdf8;
-  animation: typeAndDelete 4s steps(20) infinite, blinkCursor 0.75s step-end infinite;
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-@keyframes blinkCursor {
-  50% {
-    border-right-color: transparent;
-  }
-}
-
-@keyframes typeAndDelete {
-  0%, 10% {
-    width: 0;
-  }
-  45%, 55% {
-    width: 100%;
-  }
-  90%, 100% {
-    width: 0;
-  }
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.fade-enter {
-  animation: fadeIn 0.5s ease forwards;
+.notification {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 18rem;
+  height: 8rem;
+  background: #29292c;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 40px;
+  box-shadow: 0 0 20px #00f2ff70;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.notiglow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00f2ff40 0%, transparent 70%);
+  z-index: 0;
+}
+
+.notiborderglow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00f2ff50;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.notititle, .notibody {
+  position: relative;
+  z-index: 2;
+  padding: 10px 20px;
+}
+
+.notititle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00f2ff;
+}
+
+.notibody {
+  font-size: 14px;
+  color: #ccc;
 }
 
   </style>
-</head>
-<body>  <header>
-    <h1 class="fade-enter">Fika Store</h1>
-    <p class="fade-enter">Layanan Digital Lengkap dan Murah</p>
-  </header>  <nav>
-    <a href="index.html" class="fade-enter">Beranda</a>
-    <a href="produk.html" class="fade-enter">Produk</a>
-    <a href="tentang.html" class="fade-enter">Tentang</a>
-    <a href="kontak.html" class="fade-enter">Kontak</a>
-  </nav>  <div class="terminal-loader">
-    <div class="terminal-header">
-      <div class="terminal-title">Status</div>
-      <div class="terminal-controls">
-        <div class="control close"></div>
-        <div class="control minimize"></div>
-        <div class="control maximize"></div>
-      </div>
-    </div>
-    <div class="text">Loading...</div>
-  </div>  <section class="content fade-enter">
-    <h2>Selamat Datang di Fika Store</h2>
-    <p>Kami menyediakan layanan digital berkualitas seperti pulsa murah, VPS hosting, jasa edit/fix bot, panel Pterodactyl, dan nomor kosong (nokos).</p>
-    <p>Temukan produk terbaik kami di halaman <a href="produk.html">Produk</a>.</p>
-  </section>  <footer class="fade-enter">
-    &copy; 2025 Fika Store - All rights reserved.
-  </footer></body>
-</html>
+</head><body>
+  <header>
+    <h1>Fika Store</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Produk</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>  <main>
+    <section class="hero">
+      <h2>Selamat Datang di Fika Store</h2>
+      <p>Kami menyediakan layanan pulsa murah, hosting panel, jasa digital, edit script bot, dan berbagai kebutuhan digital lainnya.</p>
+    </section><div class="notification">
+  <div class="notiglow"></div>
+  <div class="notiborderglow"></div>
+  <div class="notititle">Welcome To Fika Store</div>
+  <div class="notibody">Terima kasih telah mengunjungi website kami!</div>
+</div>
+
+  </main>
+</body></html>
