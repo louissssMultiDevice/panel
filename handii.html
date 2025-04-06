@@ -169,38 +169,89 @@
       .hero img {
         margin-top: 2rem;
       }
+      .cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #00f7ff;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
     }
   </style>
 </head>
 <body>  <nav>
-    <div class="logo2">Fika</div>
+    <div class="logo2">Fika Portofolio</div>
     <div class="menu">
       <a href="index.html">Home</a>
-      <a href="menu.html">Order</a>
-      <a href="tentang.html">Tentang</a>
-      <a href="kontak.html">Kontak</a>
-      <a href="jasa.html">jasa</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Service</a>
+      <a href="contact.html">contact</a>
     </div>
   </nav> 
   <div class="image">
     <img src="thumb.jpg" alt="Fika Ai"/>
   </div>
   <section class="hero">
-  <div class="hero-content">
-    <div class="text">
-      <h1>Hello, It's Me</h1>
-      <h2>Handi</h2>
-      <p>And I'm the developer of this website</p>
-      <div class="social-icons">
-        <i class="bx bxl-whatsapp"></i>
-        <i class="bx bxl-instagram"></i>
-        <i class="bx bxl-linkedin"></i>
-      </div>
-      <a href="#" class="btn">Download CV</a>
+  <div class="hero-left">
+    <h1>Hai, It's <span class="highlight">Handi</span></h1>
+    <h2>I'm a <span class="highlight"><span class="typed-text"></span><span class="cursor">&nbsp;</span></span></h2>
+    <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
+    <div class="socials">
+      <i class="bx bxl-whatsapp"></i>
+      <i class="bx bxl-instagram"></i>
+      <i class="bx bxl-linkedin"></i>
+    </div>
+    <div class="buttons">
+      <a href="menu.html" class="btn-primary">Belanja</a>
+      <a href="kontak.html" class="btn-secondary">Contact</a>
     </div>
   </div>
-  </section>
+  <div class="hero-right">
+    <img src="thumb.jpg" alt="Foto Profil" />
+  </div>
   </section>  <footer>
     &copy; 2025 Fika Store. Dibuat oleh Handi dengan penuh perjuangan.
-  </footer></body>
+  </footer>
+<script>
+  const words = ["Handi", "Fullstack Dev", "Designer", "Programmer", "Handi"];
+  const typedText = document.querySelector(".typed-text");
+  const cursor = document.querySelector(".cursor");
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentWord = words[wordIndex];
+    const currentText = currentWord.substring(0, charIndex);
+
+    typedText.textContent = currentText;
+
+    if (!isDeleting) {
+      if (charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else {
+        isDeleting = true;
+        setTimeout(typeEffect, 1500); // Tunggu sebelum menghapus
+      }
+    } else {
+      if (charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 60);
+      } else {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, 500);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+</body>
 </html>
