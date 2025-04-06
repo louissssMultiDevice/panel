@@ -104,73 +104,7 @@
       }
     }
   </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    #chatbox::-webkit-scrollbar { width: 6px; }
-    #chatbox::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 6px; }
-  </style>
-</head>
-<body>
-
-<!-- Tombol Buka Chatbot -->
-<button id="toggleChat" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700">
-  Chat
-</button>
-
-<!-- Chatbox -->
-<div id="chatContainer" class="fixed bottom-20 right-6 w-80 bg-white rounded-2xl shadow-xl p-4 hidden flex-col">
-  <div class="flex justify-between items-center mb-2">
-    <h2 class="text-lg font-semibold">Fika Chatbot</h2>
-    <button id="closeChat" class="text-sm text-red-500">Tutup</button>
-  </div>
-  <div id="chatbox" class="h-64 overflow-y-auto mb-2 space-y-2 text-sm"></div>
-  <div class="flex">
-    <input id="userInput" type="text" placeholder="Ketik sesuatu..." class="flex-grow border rounded-l-xl px-3 py-2 text-sm focus:outline-none"/>
-    <button id="sendBtn" class="bg-blue-600 text-white px-4 py-2 rounded-r-xl hover:bg-blue-700">Kirim</button>
-  </div>
-</div>
-
-<script>
-const toggleChat = document.getElementById('toggleChat');
-const closeChat = document.getElementById('closeChat');
-const chatContainer = document.getElementById('chatContainer');
-const sendBtn = document.getElementById('sendBtn');
-const userInput = document.getElementById('userInput');
-const chatbox = document.getElementById('chatbox');
-
-// Toggle Chatbox
-toggleChat.onclick = () => chatContainer.classList.toggle('hidden');
-closeChat.onclick = () => chatContainer.classList.add('hidden');
-
-// Kirim pesan ke chatbot
-sendBtn.onclick = async () => {
-  const message = userInput.value.trim();
-  if (!message) return;
-
-  chatbox.innerHTML += `<div class="text-right text-blue-700">Kamu: ${message}</div>`;
-  userInput.value = '';
-  chatbox.scrollTop = chatbox.scrollHeight;
-
-  // Kirim ke API bot kamu di sini
-  try {
-    const message = "Halo, FikaBot";
-    const res = await fetch('https://fikabot.foresh.tech/chat', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ message })
-});
-const data = await res.json();
-const reply = data.reply || "Fika tidak bisa menjawab."
-    chatbox.innerHTML += `<div class="text-left text-gray-700">Fika: ${reply}</div>`;
-  } catch (err) {
-    chatbox.innerHTML += `<div class="text-left text-red-500">Gagal terhubung ke server.</div>`;
-  }
-
-  chatbox.scrollTop = chatbox.scrollHeight;
-};
-</script>
+  <body>
 
   <header>
     <nav>
