@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charSet="utf-8"/>
+  <title>Fika-Ai Chat Assistant</title>
+  <meta name="description" content="Asisten AI dari Fika Store"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
+  <link rel="preload" href="/_next/static/css/style.css" as="style"/>
+  <link rel="stylesheet" href="/_next/static/css/style.css"/>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      background-color: #f9fafb;
+    }
+
+    .dark body {
+      background-color: #1a202c;
+    }
+
+    .chat-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 4px solid #6366f1;
+      margin-bottom: 1rem;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #6366f1, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="__next">
+    <div class="flex flex-col h-screen font-poppins">
+      <header class="h-16 p-4 bg-indigo-600 text-white flex justify-between items-center shadow-md sticky top-0 z-10">
+        <h1 class="text-xl font-bold flex items-center">
+          <span class="animate-pulse">⚡</span>
+          <span class="ml-2 gradient-text">Fika-Ai Assistant</span>
+        </h1>
+      </header>
+
+      <main class="flex-1 overflow-y-auto p-4">
+        <div class="flex flex-col items-center justify-center h-full text-center">
+          <div class="max-w-md w-full p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+            <img src="thumb.jpg" alt="Fika-Ai" class="chat-avatar"/>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Assalamualaikum, Aku Fika-Ai!</h2>
+            <p class="text-base text-gray-600 dark:text-gray-300">
+              Siap bantu kamu 24/7 seputar layanan Fika Store seperti hosting, pulsa, panel, dan lainnya. Ayo ngobrol!
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="border-t bg-white dark:bg-gray-900 p-4 sticky bottom-0">
+        <form class="flex items-center space-x-2 max-w-4xl mx-auto">
+          <input type="text" placeholder="Tulis pesan kamu ke Fika-Ai..." class="flex-1 p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"/>
+          <button type="submit" class="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">
+            Kirim
+          </button>
+        </form>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
